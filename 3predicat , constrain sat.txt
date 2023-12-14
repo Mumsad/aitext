@@ -1,0 +1,56 @@
+from constraint import Problem, AllDifferentConstraint
+
+constrain 
+
+# Define the problem
+problem = Problem()
+
+# Define variables (countries) and their possible values (colors)
+countries = ['A', 'B', 'C']
+colors = ['Red', 'Green', 'Blue']
+
+problem.addVariables(countries, colors)
+
+# Add constraint: No two neighboring countries should have the same color
+problem.addConstraint(AllDifferentConstraint(), ['A', 'B'])
+problem.addConstraint(AllDifferentConstraint(), ['B', 'C'])
+problem.addConstraint(AllDifferentConstraint(), ['A', 'C'])
+
+# Solve the problem
+solutions = problem.getSolutions()
+
+# Print solutions
+for solution in solutions:
+    print(solution).             
+ Tho ye cmd mae daalna : pip install python-constraint
+
+* 3 predicates
+# Define predicates
+def male(person):
+    return person in males
+
+def female(person):
+    return person in females
+
+def parent(child, parent):
+    return (child, parent) in family_relations
+
+# Define family relations
+males = {'John', 'Bob', 'Tom', 'James'}
+females = {'Alice', 'Mary', 'Emma', 'Linda'}
+
+family_relations = {
+    ('Bob', 'John'),  # John is the father of Bob
+    ('Alice', 'John'),  # John is the father of Alice
+    ('Tom', 'Bob'),  # Bob is the father of Tom
+    ('Emma', 'Bob'),  # Bob is the mother of Emma
+    ('James', 'Tom'),  # Tom is the father of James
+    ('Linda', 'Tom'),  # Tom is the mother of Linda
+    # Add more family relations as needed
+}
+
+# Examples
+print(male('John'))  # True
+print(female('Bob'))  # False
+print(parent('Bob', 'John'))  # True
+print(parent('Alice', 'Tom'))
